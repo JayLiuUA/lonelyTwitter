@@ -39,6 +39,12 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
+				importantTweet important_tweet = new importantTweet();
+				try{
+					important_tweet.setMessage(text);
+				} catch(longTweetException e){
+
+				}
 				saveInFile(text, new Date(System.currentTimeMillis()));
 				finish();
 
@@ -79,6 +85,8 @@ public class LonelyTwitterActivity extends Activity {
 	
 	private void saveInFile(String text, Date date) {
 		try {
+			normalTweet myTweet = new NormalTweet("");
+			myTweet.setMessage("I am loooooooooooooo");
 			FileOutputStream fos = openFileOutput(FILENAME,
 					Context.MODE_APPEND);
 			fos.write(new String(date.toString() + " | " + text)
