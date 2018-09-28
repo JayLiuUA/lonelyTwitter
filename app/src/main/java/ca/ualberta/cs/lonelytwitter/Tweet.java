@@ -6,21 +6,11 @@ public abstract class Tweet {
     protected String message;
     protected Date date;
 
-    Tweet() {
-        //Must use the 'this' keyword in order to specify the current object message = message does nothing!
-        this.date = new Date();
-        this.message = "I am default message schwa!";
-    }
 
-    //Overloading: so that we can specify the tweet content
-    Tweet(String message) {
-        this.date = new Date();
-        this.message = message;
-    }
 
     public void setMessage(String message) throws longTweetException{
 
-        if (this.message.length() > 140){
+        if (message.length() > 140){
             throw new longTweetException();
         }
         this.message = message;
@@ -35,4 +25,7 @@ public abstract class Tweet {
         return this.date;
     }
     public abstract Boolean isImportant();
+    public String toString(){
+        return this.date.toString()+" | "+this.message;
+    }
 }
