@@ -1,3 +1,15 @@
+/*
+*   Lonely Twitter
+*
+*   Version: 1.0
+*
+*   October 3, 2018
+*
+*   @author: Xiaohui1
+*   @since 1.0
+*   @see java.io
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -65,7 +77,9 @@ public class LonelyTwitterActivity extends Activity {
 			}
 		});
 	}
-
+/*  @param: none
+        @return: none
+ */
 	@Override
 	protected void onStart() {
 		super.onStart();
@@ -74,7 +88,9 @@ public class LonelyTwitterActivity extends Activity {
 				R.layout.list_item, tweets);
 		oldTweetsList.setAdapter(adapter);
 	}
-
+/*  @param: none
+        @return: none
+ */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -93,7 +109,9 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-
+/*  @param: none
+        @return: none
+ */
 	private void saveInFile() {
 		try {
             FileOutputStream fos = openFileOutput(FILENAME, 0);
