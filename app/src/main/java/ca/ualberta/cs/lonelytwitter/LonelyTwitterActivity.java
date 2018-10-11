@@ -88,6 +88,7 @@ public class LonelyTwitterActivity extends Activity {
 				R.layout.list_item, tweets);
 		oldTweetsList.setAdapter(adapter);
 	}
+
 /*  @param: none
         @return: none
  */
